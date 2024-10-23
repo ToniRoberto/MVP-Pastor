@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mural de fotos</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/stylemobile.css">
+
+    <script>
+        // Função para observar a visibilidade dos elementos
+function observeElement(element) {
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('animate'); // Adiciona a classe 'animate' ao elemento
+                observer.unobserve(entry.target); // Para de observar o elemento após a animação iniciar
+            }
+        });
+    }, { threshold: 0.1 }); // Define que o elemento deve estar 10% visível para disparar
+
+    observer.observe(element);
+}
+
+// Seleciona os elementos que precisam da animação
+document.addEventListener('DOMContentLoaded', () => {
+    const imgPerfil = document.querySelector('.imgPerfil');
+    const bio = document.querySelector('.bio');
+
+    // Chama a função para observar os elementos
+    observeElement(imgPerfil);
+    observeElement(bio);
+});
+
+    </script>
+    <script>
+        // Seleciona elementos
+        var modal = document.getElementById("myModal");
+        var img = document.getElementById("myImg");
+        var modalImg = document.getElementById("imgModal");
+        var closeModal = document.getElementsByClassName("close")[0];
+
+        // Ao clicar na imagem, abre o modal com zoom
+        img.onclick = function(){
+            modal.style.display = "block";
+            modalImg.src = this.src;
+        }
+
+        // Ao clicar no "x", fecha o modal
+        closeModal.onclick = function() { 
+            modal.style.display = "none";
+        }
+
+        // Fechar o modal ao clicar fora da imagem
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div id="imgTopFundo">
+        <p class="animated-text"><img src="data:image/png;base64,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"/></p>
+        <H2 class="animated-text">Portifólio</H2>
+    </div>
+    
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index">
+                <p>Pastor<br>Ruan</p>
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse confAdd" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-6 mb-lg-0 navMenuItens">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="index.html">Início</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="portifolio.html">Portifólio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="videos.html">Vídeos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="index.html#contato">Contato</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <br><br>
+    <div class="sessaoPortifolio">
+        <div class="img1Port">
+            <div class="contornoImgPort">
+                <a>
+                    <img src="img/imgSessao1.jpg">
+                </a>
+            </div>
+            <p>Álbum Nº 01</p>
+        </div>
+
+        <div class="img1Port">
+            <div class="contornoImgPort">
+                <a href="#">
+                    <img src="img/imgSessao2.jpg">
+                </a>
+            </div>
+            <p>Álbum 02</p>
+        </div>
+        <div class="img1Port">
+            <div class="contornoImgPort">
+                <a href="#">
+                    <img src="img/imgSessao3.jpg">
+                </a>
+            </div>
+            <p>Álbum 03</p>
+        </div>
+        <div class="img1Port">
+            <div class="contornoImgPort">
+                <a href="#">
+                    <img src="img/imgSessao4.jpg" id="myImg">
+                </a>
+            </div>
+            <p>Álbum Nº 04</p>
+        </div>
+
+        <div class="img1Port">
+            <div class="contornoImgPort">
+                <a href="#">
+                    <img src="img/imgSessao5.jpg" id="myImg">
+                </a>
+            </div>
+            <p>Álbum 05</p>
+        </div>
+        <div class="img1Port">
+            <div class="contornoImgPort">
+                <a href="#">
+                    <img src="img/imgSessao6.jpg" id="myImg">
+                </a>
+            </div>
+            <p>Álbum 06</p>
+        </div>
+        
+    </div>
+    <!-- Modal -->
+    <div id="myModal" class="modal">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="imgModal">
+        <!-- Botão de download -->
+        <a id="downloadBtn" class="download-btn" download><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAAAVRJREFUSEvtlrEuRUEQhr9fQVRI9BoPICKikFBLFOIdKJU8AuUteQdRSNRuohAR8QAavQSVUPjdlaNwnL1n99ziIHfbnZ1v5s/M7IiWjlri8jfAtueAyYhKT5JuUxXMytj2ObAScd6VtDoExxQYSt23Nv53cdneAHZKEoQ+nojI8gyU+7gj6aTKPlpctsPdMRACaHICcFOSs8DB2PYo0AWWMsmXYdBIemvcTrangCtgNhF+ByxKeuxnn9THtmeAa2C6Bv4ALEi6rwsyCVzIPg9cAOMRpy/AsqSbOmi4TwYX8DXgFBgpOX8H1iWdpUCzwQV8CzgsAbYlHaVCG4EL+D6wW4AOJO3lQAcBf/V48BHt1YGrusqB7bHPyKXX3GwbZ9wEVH5TWdW9Xyh5hUkJorcShZXp24mBK+drCqTKRtIPzq8DtyN1U0lz3mWNzBzHdbatgT8ABTJ2H4S9l2IAAAAASUVORK5CYII="/></a>
+    </div>
+
+
+    <br><br>
+    <footer>
+        <p>© 2024 por Pastor Ruan. Todos os direitos reservados!</p>
+    </footer>
+
+
+    <script>
+        // Seleciona todos os elementos com a classe 'img1Port'
+        var imgs = document.querySelectorAll('.img1Port img');
+        var modal = document.getElementById("myModal");
+        var modalImg = document.getElementById("imgModal");
+        var closeModal = document.getElementsByClassName("close")[0];
+        var downloadBtn = document.getElementById("downloadBtn");
+
+        // Adiciona um evento de clique para cada imagem
+        imgs.forEach(function(img) {
+            img.onclick = function() {
+                modal.style.display = "block";
+                modalImg.src = this.src;
+
+                // Define o link para download da imagem
+                downloadBtn.href = this.src;
+                downloadBtn.setAttribute('download', this.alt); // Usa o atributo alt como nome do arquivo
+            }
+        });
+
+        // Ao clicar no "x", fecha o modal
+        closeModal.onclick = function() { 
+            modal.style.display = "none";
+        }
+
+        // Fechar o modal ao clicar fora da imagem
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+</body>
+
+</html>

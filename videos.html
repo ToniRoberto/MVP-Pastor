@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mural de fotos</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/stylemobile.css">
+
+    <script>
+        // Função para observar a visibilidade dos elementos
+function observeElement(element) {
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('animate'); // Adiciona a classe 'animate' ao elemento
+                observer.unobserve(entry.target); // Para de observar o elemento após a animação iniciar
+            }
+        });
+    }, { threshold: 0.1 }); // Define que o elemento deve estar 10% visível para disparar
+
+    observer.observe(element);
+}
+
+// Seleciona os elementos que precisam da animação
+document.addEventListener('DOMContentLoaded', () => {
+    const imgPerfil = document.querySelector('.imgPerfil');
+    const bio = document.querySelector('.bio');
+
+    // Chama a função para observar os elementos
+    observeElement(imgPerfil);
+    observeElement(bio);
+});
+
+    </script>
+    <script>
+        // Seleciona elementos
+        var modal = document.getElementById("myModal");
+        var img = document.getElementById("myImg");
+        var modalImg = document.getElementById("imgModal");
+        var closeModal = document.getElementsByClassName("close")[0];
+
+        // Ao clicar na imagem, abre o modal com zoom
+        img.onclick = function(){
+            modal.style.display = "block";
+            modalImg.src = this.src;
+        }
+
+        // Ao clicar no "x", fecha o modal
+        closeModal.onclick = function() { 
+            modal.style.display = "none";
+        }
+
+        // Fechar o modal ao clicar fora da imagem
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div id="imgTopFundo">
+        <p class="animated-text"><img src="data:image/png;base64,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"/></p>
+        <H2 class="animated-text">Vídeos</H2>
+    </div>
+    
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index">
+                <p>Pastor<br>Ruan</p>
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse confAdd" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-6 mb-lg-0 navMenuItens">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="index.html">Início</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="portifolio.html">Portifólio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="videos.html">Vídeos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="index.html#contato">Contato</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <br><br>
+    <div class="sessaoPortifolio">
+        <div class="FramesVideos">
+            <iframe width="853" height="480" src="https://www.youtube.com/embed/Un2PUATqNGs" title="Hospital Regional do Tapajós - Imagens Aéreas (Itaituba PA)" allow="autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <iframe width="853" height="480" src="https://www.youtube.com/embed/_W7ofuQwglA" title="Praia em Rio Tapajós em Itaituba-PA." frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <iframe width="853" height="480" src="https://www.youtube.com/embed/bEg7qgqVp6I" title="Itaituba-pará 2015" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <iframe width="853" height="480" src="https://www.youtube.com/embed/hphwbm68ZVw" title="Orla de Itaituba - Rio Tapajós (Itaituba PA)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    
+        </div>
+             
+    </div>
+   
+
+    <br><br>
+    <footer>
+        <p>© 2024 por Pastor Ruan. Todos os direitos reservados!</p>
+    </footer>
+
+
+   
+</body>
+
+</html>

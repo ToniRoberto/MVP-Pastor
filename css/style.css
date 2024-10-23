@@ -1,0 +1,417 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+#imgTopFundo{
+    width: 100%;
+    height: 90vh;
+    background-image: url("../img/imgTuris.jpg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    position: absolute;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+#imgTopFundo p{
+    margin-top: 35vh;
+    color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+@keyframes textSlide {
+    0% {
+      transform: translateY(100%);
+      opacity: 0;
+    }
+    80% {
+      transform: translateY(-5%);
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  .animated-text {
+    display: inline-block;
+    font-size: 24px;
+    font-weight: bold;
+    animation: textSlide 3s ease-in-out;
+  }
+
+#imgTopFundo h2{
+    color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    font-family: Adobe Caslon;
+    font-size: 55px;
+    width: 50%;
+    margin-left: 25%;
+    font-style: italic;
+    text-align: center;
+}
+#imgTopFundo a{
+    color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid white;
+    width: 16%;
+    margin-left: 42%;
+    font-size: 13px;
+    padding: 18px;
+    text-decoration: none;
+    font-weight: bolder;
+}
+#imgTopFundo a:hover{
+    background-color: brown;
+    color: white;
+    font-weight: bolder;
+    transition: 0.5s;
+}
+nav{
+    position: absolute;
+    z-index: 3;
+    background-color: #fff;
+}
+.confAdd{
+    margin-left: 25%;
+}
+.container-fluid{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding-left: 25%;
+}
+.navMenuItens li{
+    padding-left: 15%;
+}
+.navMenuItens a{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 11pt;
+    font-weight: bolder;
+    /*border: 1px solid white;
+    width: 100px;
+    text-align: center;*/
+}
+.navMenuItens a:hover{
+    background-color: white;
+    color: brown !important;
+    transition: 0.9s;
+}
+
+.sessao{
+    width: 100%;
+    height: 650px;
+    padding: 25px;
+    margin-top: 76vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 25px;
+}
+.img1{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.img1 p{
+    margin-top: 15px;
+    font-size: 9pt;
+    font-weight: bolder;
+    color: brown;
+}
+.img1 h4{
+    border-top: 2px solid brown;
+    border-top-left-radius: 20%;
+    font-weight: bolder;
+    font-style: italic;
+    color: brown;
+}
+.contornoImg img{
+    width: 100%;
+    height: 220px;
+}
+
+.contornoImg {
+    position: relative;
+    overflow: hidden;
+    width: 340px;
+    height: 220px;
+  }
+  .contornoImg img {
+    max-width: 100%;
+    -moz-transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
+  }
+  .contornoImg:hover img {
+    -moz-transform: scale(1.2);
+    -webkit-transform: scale(1.2);
+    transform: scale(1.2);
+  }
+
+.sobremim{
+    background-color: #44593A;
+    height: 400px;
+    width: 70%;
+    margin-left: 15%;
+    position: absolute;
+    margin-top: -280px;
+    padding: 100px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: #fff;
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    align-items: center;
+}
+.imgPerfil{
+    background-color: #fff;
+    width: 35%;
+    height: 270px;
+    transform: translateX(-100%);
+    transition: transform 1s ease-out;
+}
+
+
+/* Para .bio */
+.bio {
+    width: 75%; /* Ajuste conforme necessário */
+    padding: 20px;
+    /* A posição inicial fora da tela à direita */
+    transform: translateX(100%);
+    /* A animação será aplicada via classe 'animate' */
+    transition: transform 1s ease-out;
+}
+
+/* Quando a classe 'animate' for adicionada */
+.animate {
+    transform: translateX(0); /* Move para a posição final */
+}
+
+
+#imgfundo{
+    width: 100%;
+}
+#imgfundo img{
+    width: 100%;
+    height: 550px;
+}
+
+.contato{
+    width: 100%;
+    height: 500px;
+    background-color: #fff;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+.contatoRede{
+    width: 20%;
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.contatoRede h4{
+    color: #44593A;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 28pt;
+    border-bottom: 4px solid #44593A;
+    width: 60px;
+
+}
+.contatoRede p{
+    color: #44593A;
+    font-weight: bolder;
+}
+.contatoRede a{
+    text-decoration: none;
+    color: #44593A;
+}
+.contatoRede img{
+    width: 35px;
+    height: 35px;
+}
+.formulario{
+    width: 20%;
+}
+.formulario form{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.formulario form button{
+    border: none;
+    width: 80px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: #44593A;
+}
+.formulario form button:hover{
+    background-color: #44593A;
+    transition: 0.5s;
+    color: #fff;
+}
+.formulario form input, textarea{
+    padding: 7px;
+    font-size: 10pt;
+    padding-left: 10px;
+    color: #44593A;
+    font-size: 10pt;
+    font-weight: bolder;
+    outline: none;
+    border: none;
+    background-color: #FFECEC;
+}
+.formulario form textarea{
+    height: 120px;
+}
+
+footer{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+    width: 100%;
+    padding-top: 2%;
+    padding-bottom: 1%;
+    background-color: #44593A;
+    color: #fff;
+    font-style: italic;
+}
+
+
+/*pagina portifolio*/
+.sessaoPortifolio{
+    width: 80%;
+    margin-left: 10%;
+    margin-top: 80vh;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* Estilo básico para a imagem */
+.img1Port {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.contornoImg img {
+    width: 300px;
+    height: auto;
+    cursor: pointer;
+}
+
+/* Estilo do modal */
+.modal {
+    display: none;
+    z-index: 3;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 90%;
+    margin-top: 4%;
+    max-width: 1050px;
+    z-index: 3;
+}
+
+/* Estilo do botão de download */
+.download-btn {
+    display: block;
+    margin: -60px auto;
+    position: absolute;
+    text-align: center;
+    margin-left: 16%;
+    z-index: 4;
+    padding: 10px 20px;
+    border: 2px solid white;
+    color: white;
+    cursor: pointer;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.download-btn:hover {
+    background-color: #005f73;
+}
+
+/* Fechar o modal */
+.close {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.contornoImgPort{
+    width: 380px;
+    height: 240px;
+    position: relative;
+    overflow: hidden;
+}
+.contornoImgPort img{
+    width: 100%;
+    height: 240px;
+}
+
+.contornoImgPort img {
+    max-width: 100%;
+    -moz-transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
+  }
+.contornoImgPort:hover img {
+    -moz-transform: scale(1.2);
+    -webkit-transform: scale(1.2);
+    transform: scale(1.2);
+  }
+.img1Port p{
+    color: brown;
+    font-size: 10pt;
+    font-weight: bolder;
+    margin-top: 1%;
+    font-style: italic;
+}
+
+/*pagina videos*/
+.FramesVideos{
+    width: 98%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+}
+.FramesVideos iframe{
+    width: 490px;
+    height: 480px;
+}
